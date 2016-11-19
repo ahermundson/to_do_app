@@ -24,7 +24,7 @@ function postTask() {
     error: function() {
       console.log("Failed to post task");
     }
-  })
+  });
 }
 
 
@@ -45,8 +45,13 @@ function getTasks() {
 function appendTasks(tasks) {
   $('.task-table').empty();
   for (var i = 0; i < tasks.length; i++) {
-    $('.task-table').append('<tr class="table-row" data-id="' + tasks[i].id + '">' +
-    '<td>' + tasks[i].task + '<button id="complete">Completed</button><button id="delete">Delete</button></td></tr>');
+    if(tasks[i].complete === 'true') {
+      $('.task-table').append('<tr class="table-row completed" data-id="' + tasks[i].id + '">' +
+      '<td>' + tasks[i].task + '<button id="complete">Completed</button><button id="delete">Delete</button></td></tr>');
+    } else {
+      $('.task-table').append('<tr class="table-row" data-id="' + tasks[i].id + '">' +
+      '<td>' + tasks[i].task + '<button id="complete">Completed</button><button id="delete">Delete</button></td></tr>');
+    }
   }
 }
 
@@ -68,5 +73,18 @@ function deleteTask() {
 }
 
 function completeTask() {
+  var id = $(this).closest('tr').data('id');
   $(this).closest('tr').addClass('completed');
+  console.log(id);
+  $.ajax({
+    type: 'PUT',
+    url: '/tasks/' + id,
+    success: function() {
+      console.log('Succesfully posted');
+      getTasks();
+    },
+    error: function() {
+      console.log("Failed to post task");
+    }
+  });
 }

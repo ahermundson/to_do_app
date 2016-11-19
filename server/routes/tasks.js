@@ -22,7 +22,6 @@ router.get('/', function(req, res) {
         console.log('select query error: ', err);
         res.sendStatus(500);
       }
-      console.log(result);
       res.send(result.rows);
     });
 
@@ -51,6 +50,30 @@ router.post('/', function(req, res) {
     });
   });
 });
+
+
+router.put('/:id', function(req, res) {
+  var taskId = req.params.id;
+  console.log("task ID: ", taskId);
+  pg.connect(connectionString, function(err, client,done) {
+    if(err) {
+      console.log('connection error: ', err);
+      res.sendStatus(500);
+    }
+    client.query('UPDATE tasks SET complete = $1 WHERE id = $2',
+    ['true', taskId],
+    function(err, result) {
+      done();
+      if (err) {
+        console.log('insert query error: ', err);
+        res.sendStatus(500);
+      } else {
+      res.sendStatus(201);
+      }
+    });
+  });
+});
+
 
 router.delete('/:id', function(req, res) {
   var taskId = req.params.id;
