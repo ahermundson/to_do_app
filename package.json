@@ -1,0 +1,23 @@
+{
+  "name": "to_do_app",
+  "version": "1.0.0",
+  "description": "[x] Create file structure [x] Create files and routes [x] Create database [x] Create a database.sql file [] Allow user to create tasks [] Store tasks in database [] Append tasks to DOM when created [] Allow user to complete or delete tasks [] Complete should change the look of task. Delete should delete from database [] Delete should remove from the dom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahermundson/to_do_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahermundson/to_do_app/issues"
+  },
+  "homepage": "https://github.com/ahermundson/to_do_app#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}

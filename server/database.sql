@@ -1,0 +1,4 @@
+CREATE TABLE tasks (
+id SERIAL PRIMARY KEY,
+task VARCHAR(500),
+complete VARCHAR(20));
