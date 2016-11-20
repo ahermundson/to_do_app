@@ -72,8 +72,9 @@ function deleteTask() {
     type: 'DELETE',
     url: '/tasks/' + id,
     success: function(result) {
-      //get tasks from database and reappend
+      //reappend tasks to DOM and show delete confirmation message
       getTasks();
+      deleteCompleted();
     },
     error: function(result) {
       console.log('could not delete pet.');
@@ -100,6 +101,15 @@ function completeTask() {
 }
 
 function deleteTaskPrompt() {
-  $('.confirm-delete').css('visibility','visible').hide().fadeIn("fast");
+  $('.confirm-delete').css('visibility','visible').hide().slideDown();
   id = $(this).closest('tr').data('id');
+}
+
+function deleteCompleted() {
+  $('.delete-complete').css('visibility','visible').hide().slideDown();
+  setTimeout(slideUpDeleteComplete, 2000);
+}
+
+function slideUpDeleteComplete() {
+  $('.delete-complete').slideUp();
 }

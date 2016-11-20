@@ -101,6 +101,7 @@ input[type="text"]:focus{
 h1, h3 {
   text-align: center;
   color: rgb(201,228,202);
+  font-family: 'Playfair Display SC', serif;
 }
 
 .form-container {
@@ -113,18 +114,35 @@ h1, h3 {
 }
 
 .confirm-delete {
-  background-color: rgb(54,73,88);
-  color: white;
+  background-color: rgb(201, 228, 202);
+  color: rgb(54, 73, 88);
   visibility: hidden;
   position: fixed;
   margin: 0 auto;
-  top: 25vh;
-  width: 200px;
+  top: 0;
+  width: 300px;
   height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: 1px solid rgb(54, 73, 88);
+}
+
+.delete-complete {
+  background-color: rgb(201, 228, 202);
+  color: rgb(54, 73, 88);
+  visibility: hidden;
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  width: 300px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgb(54, 73, 88);
 }
 
 .task-table {
@@ -151,5 +169,15 @@ td {
 }
 
 img {
+  cursor: pointer;
+}
+
+
+#deleteConfirmed, #cancelDelete {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgb(54, 73, 88);
+  color: rgb(54, 73, 88);
+  margin: 5px;
   cursor: pointer;
 }
