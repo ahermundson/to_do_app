@@ -66,7 +66,7 @@ body {
 
 .task-label {
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 5px;
   transform-origin: left center;
   transition: all 0.3s;
@@ -102,7 +102,7 @@ input[type="text"]:focus{
 h1, h3 {
   text-align: center;
   color: rgb(201,228,202);
-  font-family: 'Playfair Display SC', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .form-container {
@@ -131,6 +131,22 @@ h1, h3 {
 }
 
 .delete-complete {
+  background-color: rgb(201, 228, 202);
+  color: rgb(54, 73, 88);
+  visibility: hidden;
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  width: 300px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgb(54, 73, 88);
+}
+
+.to-complete {
   background-color: rgb(201, 228, 202);
   color: rgb(54, 73, 88);
   visibility: hidden;

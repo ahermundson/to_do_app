@@ -1,6 +1,7 @@
 $(document).ready(function() {
   console.log("ready");
   getTasks();
+  setTimeout(toComplete, 1000);
   $('#taskForm').on('submit', postTask);
   $('.task-table').on('click', '#delete', deleteTaskPrompt);
   $('.task-table').on('click', '#complete', completeTask);
@@ -10,7 +11,7 @@ $(document).ready(function() {
   });
 });
 
-
+var tasksToComplete = 0;
 
 function postTask() {
   event.preventDefault();
@@ -53,12 +54,14 @@ function getTasks() {
 
 
 function appendTasks(tasks) {
+  tasksToComplete = 0;
   $('.task-table').empty();
   for (var i = 0; i < tasks.length; i++) {
     if(tasks[i].complete === 'true') {
       $('.task-table').append('<tr class="table-row completed" data-id="' + tasks[i].id + '">' +
       '<td>' + tasks[i].task + '<span id="table_buttons"><img id="delete" src="../assets/delete.png" /></span></td></tr>');
     } else {
+      tasksToComplete++;
       $('.task-table').append('<tr class="table-row" data-id="' + tasks[i].id + '">' +
       '<td>' + tasks[i].task + '<span id="table_buttons"><img id="complete" src="../assets/checkmark.png" /><img id="delete" src="../assets/delete.png" /></span></td></tr>');
     }
@@ -112,4 +115,14 @@ function deleteCompleted() {
 
 function slideUpDeleteComplete() {
   $('.delete-complete').slideUp();
+}
+
+function toComplete() {
+  $('.inner-toComplete').append('<p>Welcome back. You have ' + tasksToComplete + ' tasks to complete.');
+  $('.to-complete').css('visibility','visible').hide().slideDown();
+  setTimeout(slideUpToComplete, 2000);
+}
+
+function slideUpToComplete() {
+  $('.to-complete').slideUp();
 }
