@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
       res.sendStatus(500);
     }
 
-    client.query('SELECT * FROM tasks ORDER BY complete', function(err, result){
+    client.query('SELECT * FROM tasks ORDER BY complete, id DESC', function(err, result){
       done(); ///close the connection.
 
       if(err) {

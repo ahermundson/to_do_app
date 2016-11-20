@@ -1,7 +1,153 @@
-h1 {
-  color: blue;
+/* CSS RESET */
+html, body, div, span, applet, object, iframe, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: rgb(54, 73, 88);
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%236f6f6f' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.page-container {
+  width: 80%;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(85,130,139,0.9);
+  position: relative;
+  margin-bottom: 25px;
+}
+
+#taskForm {
+  position: relative;
+}
+
+.task-label {
+  position: absolute;
+  top: 12px;
+  left: 5px;
+  transform-origin: left center;
+  transition: all 0.3s;
+  font-family: sans-serif;
+}
+
+.task-input:focus + .task-label {
+  transform: translateY(-40px) scale(0.9);
+}
+
+input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  box-shadow: none;
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px rgb(201,228,202);
+
+}
+input[type="text"]:focus{
+  /*border-bottom: solid 5px #969696;*/
+  outline: none;
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+h1, h3 {
+  text-align: center;
+  color: rgb(201,228,202);
+}
+
+.form-container {
+  width: 65%;
+}
+
+.task-container {
+  width: 65%;
+  margin-bottom: 45px;
+}
+
+.confirm-delete {
+  background-color: rgb(54,73,88);
+  color: white;
+  visibility: hidden;
+  position: fixed;
+  margin: 0 auto;
+  top: 25vh;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.task-table {
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.table-row {
+  width: 100%;
+}
+
+td {
+  background-color: white;
+  border-bottom: 1px solid blue;
+  border-left: 1px solid red;
+  padding: 5px;
+}
+
+#table_buttons {
+  float: right;
+}
+
+img {
+  cursor: pointer;
 }

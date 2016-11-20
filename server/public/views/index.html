@@ -5,17 +5,39 @@
     <title>To Do List</title>
     <script type="text/javascript" src="../vendor/jquery.min.js"></script>
     <script type="text/javascript" src="../scripts/client.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
+
 </head>
   <body>
-    <h1>To Do</h1>
-    <form id="taskForm">
-      <input type="text" id="task" name="task" />
-      <button>Submit</button>
-    </form>
+    <div class="page-container">
+      <div class="form-container">
+        <h1>Honey Do List</h1>
+        <form id="taskForm">
+          <input type="text" id="task" name="task" class="task-input" />
+          <label class="task-label" for="task">Enter Task Here</label>
+          <!-- <button>Submit</button> -->
+        </form>
+      </div>
 
-    <table class="task-table">
-      
-    </table>
+
+      <div class="task-container">
+        <h3>Tasks</h3>
+        <table class="task-table">
+
+        </table>
+      </div>
+
+      <div class="confirm-delete">
+        <div class="inner-confirm">
+          <p>Are you sure you want to delete this task?</p>
+          <button id="deleteConfirmed">Yes</button><button id="cancelDelete">Cancel</button>
+        </div>
+      </div>
+
+
+    </div>
+
+
   </body>
 </html>
