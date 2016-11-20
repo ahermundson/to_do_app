@@ -142,10 +142,12 @@ td {
   border-bottom: 1px solid blue;
   border-left: 1px solid red;
   padding: 5px;
+  display: flex;
+  align-items: center;
 }
 
 #table_buttons {
-  float: right;
+  margin-left: auto;
 }
 
 img {
