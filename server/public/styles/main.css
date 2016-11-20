@@ -70,17 +70,18 @@ body {
   left: 5px;
   transform-origin: left center;
   transition: all 0.3s;
-  font-family: sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .task-input:focus + .task-label {
+  color: rgb(201,228,202);
   transform: translateY(-40px) scale(0.9);
 }
 
 input[type="text"] {
   display: block;
   margin: 0;
-  width: 100%;
+  width: 97.5%;
   font-family: sans-serif;
   font-size: 18px;
   box-shadow: none;
@@ -151,14 +152,19 @@ h1, h3 {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+.task-table td:hover {
+  background-color: rgb(54, 73, 88);
+  color: white;
+}
+
 .table-row {
   width: 100%;
 }
 
 td {
   background-color: white;
-  border-bottom: 1px solid blue;
-  border-left: 1px solid red;
+  border-bottom: 1px solid rgb(54, 73, 88);
+  /*border-left: 1px solid red;*/
   padding: 5px;
   display: flex;
   align-items: center;
