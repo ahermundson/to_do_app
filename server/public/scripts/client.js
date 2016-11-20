@@ -17,7 +17,10 @@ function postTask() {
   event.preventDefault();
   var taskObject = {};
   taskObject.task = $('#task').val();
-  if (taskObject.task.length <= 100) {
+  if (taskObject.task === '') {
+    noTask();
+  }
+  else if (taskObject.task.length <= 100) {
     $('#task').val('');
     $('#task').blur();
     console.log('task console: ', task);
@@ -118,11 +121,20 @@ function slideUpDeleteComplete() {
 }
 
 function toComplete() {
-  $('.inner-toComplete').append('<p>Welcome back. You have ' + tasksToComplete + ' tasks to complete.');
+  $('.inner-toComplete').append('<p>Welcome back. You have ' + tasksToComplete + ' task(s) to complete.');
   $('.to-complete').css('visibility','visible').hide().slideDown();
   setTimeout(slideUpToComplete, 2000);
 }
 
 function slideUpToComplete() {
   $('.to-complete').slideUp();
+}
+
+function noTask() {
+  $('.no-task').css('visibility','visible').hide().slideDown();
+  setTimeout(slideUpNoTask, 2000);
+}
+
+function slideUpNoTask() {
+  $('.no-task').slideUp();
 }
