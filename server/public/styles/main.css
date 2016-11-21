@@ -78,6 +78,11 @@ body {
   transform: translateY(-40px) scale(0.9);
 }
 
+.has-value  {
+  color: rgb(201,228,202);
+  transform: translateY(-40px) scale(0.9);
+}
+
 input[type="text"] {
   display: block;
   margin: 0;

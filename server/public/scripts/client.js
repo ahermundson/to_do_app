@@ -9,6 +9,7 @@ $(document).ready(function() {
   $('#cancelDelete').on('click', function() {
     $('.confirm-delete').fadeOut('slow');
   });
+  $('.task-input').focusout(hasValue);
 });
 
 var tasksToComplete = 0;
@@ -137,4 +138,19 @@ function noTask() {
 
 function slideUpNoTask() {
   $('.no-task').slideUp();
+}
+
+function hasValue() {
+  var text_val = $(this).val();
+
+  if(text_val === "") {
+
+    $('.task-label').removeClass('has-value');
+
+  } else {
+
+    $('.task-label').addClass('has-value');
+
+  }
+
 }
